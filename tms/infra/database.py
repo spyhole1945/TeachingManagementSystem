@@ -9,10 +9,16 @@ from typing import Generator
 from tms.config import config
 
 # Create SQLAlchemy engine
+# Create SQLAlchemy engine
+connect_args = {}
+if "sqlite" in config.DATABASE_URL:
+    connect_args = {"check_same_thread": False}
+
 engine = create_engine(
     config.DATABASE_URL,
-    connect_args={"check_same_thread": False} if "sqlite" in config.DATABASE_URL else {},
-    echo=config.DEBUG
+    connect_args=connect_args,
+    echo=config.DEBUG,
+    pool_pre_ping=True
 )
 
 # Create session factory
