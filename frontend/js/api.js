@@ -3,7 +3,7 @@
  * Handles all API communication with the backend
  */
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = '';
 
 class TMSApi {
     constructor() {
