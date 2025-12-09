@@ -1,0 +1,71 @@
+::1 - - [09/Dec/2025 17:36:46] "GET /teacher-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:36:46] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 17:36:46] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 17:36:51] "GET /teacher-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 17:40:08] "GET / HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:40:08] "GET /css/styles.css HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:40:08] "GET /js/api.js HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:40:10] code 404, message File not found
+::1 - - [09/Dec/2025 17:40:10] "GET /favicon.ico HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:40:12] "GET /login.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:40:15] code 404, message File not found
+::1 - - [09/Dec/2025 17:40:15] "GET /admin-dashboard.html HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:40:25] code 404, message File not found
+::1 - - [09/Dec/2025 17:40:25] "GET /admin-dashboard.html HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:41:12] code 404, message File not found
+::1 - - [09/Dec/2025 17:41:12] "GET /admin-dashboard.html HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:41:20] "GET /teacher-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:41:26] "GET /student-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:41:37] code 404, message File not found
+::1 - - [09/Dec/2025 17:41:37] "GET /admin-dashboard.html HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:43:29] code 404, message File not found
+::1 - - [09/Dec/2025 17:43:29] "GET /admin-dashboard.html HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 17:44:35] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 17:48:51] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 18:06:10] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 18:06:10] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 18:06:10] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 18:12:56] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:30:31] "GET /login.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:30:31] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:30:31] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:32:16] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:33:38] "GET /teacher-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:33:38] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:33:38] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:33:54] "GET /teacher-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:36:02] "GET /login.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:37:17] "GET /teacher-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:37:18] "GET /teacher-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:37:21] code 404, message File not found
+::1 - - [09/Dec/2025 19:37:21] "GET /undefined/grades/template?course_id=1 HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:40:00] "GET /teacher-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:40:04] code 404, message File not found
+::1 - - [09/Dec/2025 19:40:04] "GET /undefined/grades/template?course_id=1 HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:40:08] "GET /teacher-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:40:15] code 404, message File not found
+::1 - - [09/Dec/2025 19:40:15] "GET /undefined/grades/template?course_id=1 HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:40:25] code 404, message File not found
+::1 - - [09/Dec/2025 19:40:25] "GET /undefined/grades/template?course_id=2 HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:40:36] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:40:36] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:40:36] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:40:41] code 404, message File not found
+::1 - - [09/Dec/2025 19:40:41] "GET /undefined/admin/users/template HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:40:53] code 404, message File not found
+::1 - - [09/Dec/2025 19:40:53] "GET /undefined/admin/courses/template HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:42:33] code 404, message File not found
+::1 - - [09/Dec/2025 19:42:33] "GET /undefined/admin/courses/template HTTP/1.1" 404 -
+::1 - - [09/Dec/2025 19:42:38] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:43:29] "GET /teacher-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 19:44:30] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:50:37] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:55:10] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:55:12] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 19:57:26] "GET /student-dashboard.html HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 20:11:24] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 20:14:15] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 20:14:15] "GET /css/styles.css HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 20:14:15] "GET /js/api.js HTTP/1.1" 304 -
+::1 - - [09/Dec/2025 20:18:44] "GET /admin-dashboard.html HTTP/1.1" 200 -
+::1 - - [09/Dec/2025 20:22:04] "GET /admin-dashboard.html HTTP/1.1" 200 -

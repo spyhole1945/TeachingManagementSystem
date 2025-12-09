@@ -1,0 +1,672 @@
+INFO:     Will watch for changes in these directories: ['/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [39417] using StatReload
+INFO:     Started server process [39420]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:59461 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "OPTIONS /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "OPTIONS /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "OPTIONS /enrollments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59561 - "OPTIONS /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "OPTIONS /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "OPTIONS /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "OPTIONS /enrollments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59561 - "OPTIONS /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "OPTIONS /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "OPTIONS /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59572 - "OPTIONS /grades/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59572 - "GET /grades/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59965 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59965 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59996 - "POST /auth/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/seed_students.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39420]
+INFO:     Started server process [39799]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'tms/seed_students.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39799]
+INFO:     Started server process [39812]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:60137 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /enrollments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /enrollments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /enrollments/student/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60151 - "OPTIONS /grades/student/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60152 - "OPTIONS /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60151 - "GET /grades/student/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60152 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /enrollments/student/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60151 - "OPTIONS /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60152 - "OPTIONS /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "OPTIONS /courses/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60152 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60137 - "GET /courses/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60151 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60169 - "POST /auth/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'check_admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39812]
+INFO:     Started server process [39963]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'reset_admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [39963]
+INFO:     Started server process [40086]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:60379 - "POST /auth/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'reset_admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40086]
+INFO:     Started server process [40280]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:60524 - "POST /auth/login HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [40280]
+Process SpawnProcess-7:
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 315, in _bootstrap
+    self.run()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/server.py", line 67, in run
+    return asyncio_run(self.serve(sockets=sockets), loop_factory=self.config.get_loop_factory())
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/_compat.py", line 60, in asyncio_run
+    return loop.run_until_complete(main)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
+    return future.result()
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/server.py", line 71, in serve
+    await self._serve(sockets)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/server.py", line 78, in _serve
+    config.load()
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/config.py", line 439, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem/tms/api/main.py", line 9, in <module>
+    from tms.api.routes import (
+  File "/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem/tms/api/routes/admin.py", line 185, in <module>
+    file: UploadFile = File(...),
+NameError: name 'File' is not defined
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Started server process [41060]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:63972 - "OPTIONS /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63972 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64020 - "OPTIONS /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64020 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64057 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64117 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64578 - "OPTIONS /grades/batch/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64578 - "POST /grades/batch/1 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/api/routes/grades.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41060]
+INFO:     Started server process [41992]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'tms/api/routes/grades.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41992]
+INFO:     Started server process [41999]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:52902 - "OPTIONS /grades/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52902 - "GET /grades/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "OPTIONS /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "OPTIONS /enrollments/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "OPTIONS /grades/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53434 - "OPTIONS /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "GET /enrollments/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53430 - "OPTIONS /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53436 - "GET /grades/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "OPTIONS /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53434 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53436 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "OPTIONS /enrollments/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53571 - "OPTIONS /grades/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53573 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "GET /enrollments/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53575 - "GET /grades/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53573 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53573 - "OPTIONS /courses/?active_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53565 - "GET /courses/?active_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "OPTIONS /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "OPTIONS /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "OPTIONS /enrollments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53620 - "OPTIONS /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "OPTIONS /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "OPTIONS /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "OPTIONS /enrollments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53620 - "OPTIONS /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "OPTIONS /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "OPTIONS /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53644 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53644 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53897 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53897 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53897 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54045 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54045 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54045 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54045 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54045 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/api/routes/grades.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41999]
+INFO:     Started server process [43825]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:54395 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54395 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54395 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54430 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54430 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54434 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54434 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "OPTIONS /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54513 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54536 - "OPTIONS /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54536 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54819 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54819 - "OPTIONS /admin/users/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54819 - "GET /admin/users/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54839 - "GET /admin/users/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /teachers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /teachers/1/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /enrollments/course/1 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54948 - "GET /assignments/course/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /assignments/1/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /assignments/3/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /enrollments/course/2 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54948 - "GET /assignments/course/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /assignments/2/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54948 - "GET /assignments/4/submissions?ungraded_only=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54974 - "OPTIONS /grades/template?course_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54974 - "GET /grades/template?course_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55092 - "OPTIONS /grades/batch/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55092 - "POST /grades/batch/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55117 - "OPTIONS /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55120 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55120 - "OPTIONS /enrollments/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55117 - "OPTIONS /grades/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55122 - "OPTIONS /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55120 - "GET /enrollments/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55117 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55120 - "OPTIONS /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55124 - "GET /grades/student/6 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55122 - "OPTIONS /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55117 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55124 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55117 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "OPTIONS /enrollments/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55336 - "OPTIONS /grades/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55344 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "GET /enrollments/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55346 - "GET /grades/student/5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55344 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "OPTIONS /enrollments/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56058 - "OPTIONS /grades/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56059 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "GET /enrollments/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56061 - "GET /grades/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56059 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56059 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56101 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /enrollments/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56100 - "GET /grades/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56101 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56097 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56101 - "GET /courses/1 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/application/services/notification_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [43825]
+INFO:     Started server process [44154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'tms/api/routes/grades.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44154]
+INFO:     Started server process [44164]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:56760 - "OPTIONS /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56764 - "OPTIONS /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56762 - "GET /grades/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /enrollments/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56762 - "OPTIONS /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "OPTIONS /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56764 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56764 - "OPTIONS /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56764 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /enrollments/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /grades/student/8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56760 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56766 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "OPTIONS /enrollments/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56840 - "OPTIONS /grades/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56841 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /enrollments/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56843 - "GET /grades/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56841 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57086 - "OPTIONS /grades/batch/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57086 - "POST /grades/batch/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /students/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57106 - "GET /notifications/unread-count HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57102 - "GET /enrollments/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57105 - "GET /grades/student/9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57105 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57106 - "GET /notifications/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57105 - "GET /courses/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57342 - "OPTIONS /admin/users/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57342 - "GET /admin/users/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57785 - "OPTIONS /admin/users/batch HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57785 - "POST /admin/users/batch HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1139, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 106, in app
+    response = await f(request)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 430, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 316, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem/tms/api/routes/admin.py", line 198, in batch_import_users
+    wb = load_workbook(filename=BytesIO(contents))
+NameError: name 'BytesIO' is not defined
+INFO:     127.0.0.1:58447 - "OPTIONS /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58447 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58485 - "OPTIONS /admin/courses/template HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58485 - "GET /admin/courses/template HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44164]
+INFO:     Started server process [44825]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:59091 - "OPTIONS /admin/courses/batch HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59091 - "POST /admin/courses/batch HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1139, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 106, in app
+    response = await f(request)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 430, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 316, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem/tms/api/routes/admin.py", line 343, in batch_import_courses
+    wb = load_workbook(filename=BytesIO(contents))
+NameError: name 'BytesIO' is not defined
+INFO:     127.0.0.1:59173 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59217 - "POST /admin/courses/batch HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/protocols/http/h11_impl.py", line 403, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/applications.py", line 1139, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 120, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 106, in app
+    response = await f(request)
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 430, in app
+    raw_response = await run_endpoint_function(
+  File "/Users/fanxuejuan/Library/Python/3.9/lib/python/site-packages/fastapi/routing.py", line 316, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Users/fanxuejuan/Documents/AntigravityProject/TeachingManagementSystem/tms/api/routes/admin.py", line 343, in batch_import_courses
+    wb = load_workbook(filename=BytesIO(contents))
+NameError: name 'BytesIO' is not defined
+INFO:     127.0.0.1:59228 - "OPTIONS /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59228 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59263 - "POST /admin/users/batch HTTP/1.1" 400 Bad Request
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44825]
+INFO:     Started server process [44883]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44883]
+INFO:     Started server process [44906]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:59645 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59671 - "OPTIONS /admin/users/batch HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59671 - "POST /admin/users/batch HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59671 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59874 - "GET /admin/users HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/application/services/auth_service.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44906]
+INFO:     Started server process [44976]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:60353 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60430 - "OPTIONS /admin/users/7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60430 - "PUT /admin/users/7 HTTP/1.1" 404 Not Found
+WARNING:  StatReload detected changes in 'tms/api/routes/admin.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44976]
+INFO:     Started server process [45057]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+🚀 Teaching Management System v1.0.0 starting...
+📚 API documentation available at /docs
+INFO:     127.0.0.1:60830 - "OPTIONS /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60830 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "PUT /admin/users/7 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /admin/users HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60897 - "OPTIONS /admin/courses HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60897 - "GET /admin/courses HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'tms/api/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [45057]
+INFO:     Started server process [45313]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.

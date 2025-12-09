@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教师仪表板 - 教学管理系统</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .navbar {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .navbar-user {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .dashboard-header {
+            padding: var(--spacing-2xl) 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .tabs {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+            border-bottom: 2px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .tab {
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: all var(--transition-base);
+        }
+
+        .tab.active {
+            color: var(--primary-light);
+            border-bottom-color: var(--primary-light);
+        }
+
+        .tab:hover:not(.active) {
+            color: var(--text-secondary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .course-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .course-code {
+            display: inline-block;
+            padding: 0.25rem 0.625rem;
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--primary-light);
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .course-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .course-info {
+            display: flex;
+            gap: var(--spacing-lg);
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: var(--radius-lg);
+            max-width: 600px;
+            width: 100%;
+            padding: var(--spacing-2xl);
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container navbar-content">
+            <a href="#" class="navbar-brand">📚 教学管理系统 - 教师端</a>
+            <div class="navbar-user">
+                <span id="userName" class="text-secondary">加载中...</span>
+                <div class="user-avatar" id="userAvatar">👨‍🏫</div>
+                <button class="btn btn-secondary btn-sm" onclick="logout()">退出登录</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-2xl);">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <h1 style="font-size: 2rem; margin-bottom: var(--spacing-sm);">
+                欢迎回来，<span id="fullName"></span>！
+            </h1>
+            <p style="color: var(--text-muted);">工号：<span id="employeeNumber"></span> | 部门：<span id="department"></span>
+            </p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-4 mb-3" id="statsContainer">
+            <div class="stat-card">
+                <div class="stat-value" id="coursesCount">0</div>
+                <div class="stat-label">授课课程</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="studentsCount">0</div>
+                <div class="stat-label">学生总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="assignmentsCount">0</div>
+                <div class="stat-label">作业数量</div>
+            </div>
+            <div class="stat-card" onclick="viewPendingGrades()" style="cursor: pointer;">
+                <div class="stat-value" id="pendingGrades">0</div>
+                <div class="stat-label">待批改</div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('courses')">📚 我的课程</button>
+            <button class="tab" onclick="switchTab('grading')">📝 作业批改</button>
+            <button class="tab" onclick="switchTab('students')">👥 学生管理</button>
+        </div>
+
+        <!-- Courses Tab -->
+        <div id="coursesTab" class="tab-content active">
+            <div class="flex justify-between items-center mb-2">
+                <h3>课程列表</h3>
+                <button class="btn btn-primary btn-sm" onclick="showAlert('功能开发中', 'info')">创建课程</button>
+            </div>
+            <div id="coursesContainer" class="grid grid-cols-2"></div>
+        </div>
+
+        <!-- Grading Tab -->
+        <div id="gradingTab" class="tab-content">
+            <div class="card mb-2">
+                <div class="form-group mb-0">
+                    <label class="form-label">选择课程查看作业</label>
+                    <select class="form-select" id="courseSelect" onchange="loadCourseAssignments(this.value)">
+                        <option value="">请选择课程...</option>
+                    </select>
+                </div>
+            </div>
+            <div id="assignmentsListContainer">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📝</div>
+                    <p>请先选择课程</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Students Tab -->
+        <div id="studentsTab" class="tab-content">
+            <div class="card">
+                <div class="table-container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>学号</th>
+                                <th>姓名</th>
+                                <th>专业</th>
+                                <th>年级</th>
+                                <th>课程</th>
+                                <th>成绩</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentsTableBody">
+                            <tr>
+                                <td colspan="6" class="text-center">加载中...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grading Modal -->
+    <div id="gradingModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-2">
+                <h2 id="gradingModalTitle">作业评分</h2>
+                <button class="btn btn-secondary btn-sm" onclick="closeGradingModal()">关闭</button>
+            </div>
+            <div id="submissionContent" class="mb-2 p-2"
+                style="background: rgba(0,0,0,0.2); border-radius: var(--radius-sm);">
+                <!-- Submission content goes here -->
+            </div>
+            <form id="gradingForm" onsubmit="submitGrade(event)">
+                <input type="hidden" id="submissionId">
+                <div class="form-group">
+                    <label class="form-label">分数 (0-100)</label>
+                    <input type="number" class="form-input" id="gradeScore" min="0" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">评语</label>
+                    <textarea class="form-textarea" id="gradeFeedback" rows="3" placeholder="请输入评语..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">提交评分</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Assignment Modal -->
+    <div id="assignmentModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-2">
+                <h2>发布新作业</h2>
+                <button class="btn btn-secondary btn-sm"
+                    onclick="document.getElementById('assignmentModal').style.display='none'">关闭</button>
+            </div>
+            <form id="createAssignmentForm" onsubmit="handleCreateAssignment(event)">
+                <input type="hidden" id="assignmentCourseId">
+                <div class="form-group">
+                    <label class="form-label">作业标题</label>
+                    <input type="text" class="form-input" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">描述</label>
+                    <textarea class="form-textarea" name="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">截止日期</label>
+                    <input type="datetime-local" class="form-input" name="dueDate" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">总分</label>
+                    <input type="number" class="form-input" name="totalPoints" value="100" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-full">发布作业</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Grade Import Modal -->
+    <div id="gradeImportModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-2">
+                <h2>批量录入成绩</h2>
+                <button class="btn btn-secondary btn-sm" onclick="closeGradeImportModal()">关闭</button>
+            </div>
+
+            <div class="alert alert-info mb-2">
+                <p>请先下载模板，填写后再上传。</p>
+                <button class="btn btn-secondary btn-sm mt-1" onclick="downloadTemplate()">⬇️ 下载Excel模板</button>
+            </div>
+
+            <form id="gradeImportForm" onsubmit="handleBatchUpload(event)">
+                <input type="hidden" id="importCourseId">
+                <div class="form-group">
+                    <label class="form-label">上传已填写的Excel文件</label>
+                    <input type="file" name="file" class="form-input" accept=".xlsx" required>
+                </div>
+                <div id="uploadResult" class="mb-2" style="display:none;"></div>
+                <button type="submit" class="btn btn-primary w-full">开始导入</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script>
+        // ... (existing code) ...
+
+        // Grade Import Functions
+        function openGradeImportModal(courseId) {
+            document.getElementById('importCourseId').value = courseId;
+            document.getElementById('gradeImportModal').style.display = 'flex';
+            document.getElementById('uploadResult').style.display = 'none';
+            document.getElementById('gradeImportForm').reset();
+        }
+
+        function closeGradeImportModal() {
+            document.getElementById('gradeImportModal').style.display = 'none';
+        }
+
+        async function downloadTemplate() {
+            const currentCourseId = document.getElementById('importCourseId').value;
+            if (!currentCourseId) {
+                alert('请先选择一个课程');
+                return;
+            }
+            try {
+                // Use a direct temporary link approach or api.js if it supports blob
+                const token = localStorage.getItem('tms_token');
+                if (!token) throw new Error('Not logged in');
+
+                // Add course_id to pre-fill template
+                const response = await fetch(`${API_BASE_URL}/grades/template?course_id=${currentCourseId}`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+
+                if (!response.ok) throw new Error('Download failed');
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `grade_template_course_${currentCourseId}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+
+            } catch (error) {
+                alert('模板下载失败: ' + error.message);
+            }
+        }
+
+        async function handleBatchUpload(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const courseId = document.getElementById('importCourseId').value;
+            const resultDiv = document.getElementById('uploadResult');
+
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = '正在上传处理中...';
+            resultDiv.className = 'alert alert-info mb-2';
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/grades/batch/${courseId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${api.token}`
+                    },
+                    body: formData
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) throw new Error(data.detail || 'Upload failed');
+
+                let resultHtml = `<p><strong>导入完成</strong></p>`;
+                resultHtml += `<p class="text-success">成功: ${data.success_count} 条</p>`;
+
+                if (data.failure_count > 0) {
+                    resultHtml += `<p class="text-danger">失败: ${data.failure_count} 条</p>`;
+                    resultHtml += `<ul class="text-sm mt-1" style="max-height: 100px; overflow-y: auto;">`;
+                    data.errors.forEach(err => {
+                        resultHtml += `<li>${err}</li>`;
+                    });
+                    resultHtml += `</ul>`;
+                    resultDiv.className = 'alert alert-warning mb-2';
+                } else {
+                    resultDiv.className = 'alert alert-success mb-2';
+                    setTimeout(() => {
+                        closeGradeImportModal();
+                        showAlert('全部导入成功！', 'success');
+                    }, 2000);
+                }
+
+                resultDiv.innerHTML = resultHtml;
+
+            } catch (error) {
+                resultDiv.className = 'alert alert-error mb-2';
+                resultDiv.textContent = '上传失败: ' + error.message;
+            }
+        }
+
+        // ... (rest of existing code)
+        // Auth Check
+        if (!checkAuth() || !api.user) {
+            window.location.href = 'login.html';
+        }
+
+        if (api.user.role !== 'teacher' && api.user.role !== 'admin') {
+            showAlert('您不是教师账号', 'error');
+            setTimeout(() => window.location.href = 'login.html', 1500);
+        }
+
+        let teacherId = null;
+        let myCourses = [];
+
+        // Init
+        async function init() {
+            document.getElementById('userName').textContent = api.user.username;
+            document.getElementById('fullName').textContent = api.user.full_name;
+
+            try {
+                // Get teacher profile
+                // Assuming we have a way to get teacher ID from user ID or a teacher endpoint
+                // For now, simpler approach: fetch all teachers and find match
+                // In production, /users/me/teacher-profile would be better
+
+                // Let's use a workaround if we don't have a direct endpoint
+                // Or maybe api.user has teacher_profile if we logged in via a smart endpoint
+                // But the auth login returns user object. 
+
+                // Let's try to fetch courses directly if the API supports it
+                // Actually, api.js has getTeacherCourses(teacherId)
+                // We need to find teacherId first.
+
+                // Hack: In our mock data, teacher ID usually matches user ID order or we can search
+                // Proper way: API should provide this. 
+                // Let's assume for this demo we can get courses by logged in user context or 
+                // we iterate to find our teacher ID.
+
+                // Try to get current user details which might include profile
+                // If not, we'll just try ID 1 for prof_zhang as a fallback for the demo
+                const teachers = await api.request('/teachers/');
+                const me = teachers.find(t => t.user_id === api.user.id);
+
+                if (me) {
+                    teacherId = me.id;
+                    document.getElementById('employeeNumber').textContent = me.employee_number;
+                    document.getElementById('department').textContent = me.department;
+                } else {
+                    console.error('Teacher profile not found');
+                    return;
+                }
+
+                await loadCourses();
+                await loadStats();
+
+            } catch (error) {
+                console.error('Init error:', error);
+                showAlert('初始化失败', 'error');
+            }
+        }
+
+        // Load Courses
+        async function loadCourses() {
+            try {
+                myCourses = await api.getTeacherCourses(teacherId);
+                const container = document.getElementById('coursesContainer');
+                const select = document.getElementById('courseSelect');
+
+                document.getElementById('coursesCount').textContent = myCourses.length;
+
+                // Populate course list
+                container.innerHTML = myCourses.map(course => `
+                    <div class="card course-card">
+                        <div class="course-header">
+                            <div>
+                                <div class="course-code">${course.course_code}</div>
+                                <h3 class="course-title">${course.name}</h3>
+                            </div>
+                        </div>
+                        <div class="course-info">
+                            <span>📅 ${course.semester}</span>
+                            <span>👥 ${course.capacity}人上限</span>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <button class="btn btn-primary btn-sm" onclick="showCreateAssignmentModal(${course.id})">发布作业</button>
+                            <button class="btn btn-secondary btn-sm" onclick="loadCourseAssignments(${course.id}); switchTab('grading')">批改作业</button>
+                            <button class="btn btn-info btn-sm" onclick="openGradeImportModal(${course.id})">成绩录入</button>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Populate select
+                select.innerHTML = '<option value="">请选择课程...</option>' +
+                    myCourses.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+
+            } catch (error) {
+                console.error('Load courses error:', error);
+            }
+        }
+
+        // Stats Logic
+        async function loadStats() {
+            try {
+                let totalStudents = 0;
+                let totalAssignments = 0;
+                let pendingGrades = 0;
+
+                for (const course of myCourses) {
+                    // Students
+                    try {
+                        // Use the new endpoint created in Step 759
+                        const enrollments = await api.request(`/enrollments/course/${course.id}`);
+                        totalStudents += enrollments.length;
+                    } catch (e) {
+                        console.error('Stats: fetch enrollments failed', e);
+                    }
+
+                    // Assignments
+                    try {
+                        const assignments = await api.request(`/assignments/course/${course.id}`);
+                        totalAssignments += assignments.length;
+
+                        // Pending Grades
+                        for (const ass of assignments) {
+                            try {
+                                const ungraded = await api.getAssignmentSubmissions(ass.id, true);
+                                pendingGrades += ungraded.length;
+                            } catch (e) {
+                                console.error('Stats: fetch submissions failed', e);
+                            }
+                        }
+                    } catch (e) {
+                        console.error('Stats: fetch assignments failed', e);
+                    }
+                }
+
+                document.getElementById('studentsCount').textContent = totalStudents;
+                document.getElementById('assignmentsCount').textContent = totalAssignments;
+                document.getElementById('pendingGrades').textContent = pendingGrades;
+
+            } catch (error) {
+                console.error('Load stats error:', error);
+            }
+        }
+
+        // Feature: Assignments Management
+        async function loadCourseAssignments(courseId) {
+            if (!courseId) return;
+            const container = document.getElementById('assignmentsListContainer');
+            container.innerHTML = '<div class="text-center">加载中...</div>';
+
+            // Set select value if called externally
+            document.getElementById('courseSelect').value = courseId;
+
+            try {
+                const assignments = await api.request(`/assignments/course/${courseId}`);
+
+                if (assignments.length === 0) {
+                    container.innerHTML = '<div class="empty-state"><p>该课程暂无作业</p></div>';
+                    return;
+                }
+
+                let html = '';
+                for (const assignment of assignments) {
+                    // Get submissions count
+                    const submissions = await api.getAssignmentSubmissions(assignment.id);
+                    const ungraded = submissions.filter(s => !s.score && s.score !== 0);
+
+                    html += `
+                        <div class="card mb-2">
+                             <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 style="font-weight: 600;">${assignment.title}</h4>
+                                    <p class="text-muted text-sm">${assignment.description || '无描述'}</p>
+                                    <div class="text-sm mt-1">
+                                        <span>📅 截止: ${new Date(assignment.due_date).toLocaleString()}</span>
+                                        <span class="ml-2">📊 总分: ${assignment.total_points}</span>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="mb-1">
+                                        <span class="badge ${ungraded.length > 0 ? 'badge-warning' : 'badge-success'}">
+                                            ${ungraded.length} 待批改 / ${submissions.length} 已提交
+                                        </span>
+                                    </div>
+                                    <button class="btn btn-secondary btn-sm" onclick="expandGradingArea(${assignment.id})">
+                                        展开批改
+                                    </button>
+                                </div>
+                             </div>
+                             <div id="grading-area-${assignment.id}" style="display: none; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                                 <!-- Grading list will be loaded here -->
+                             </div>
+                        </div>
+                    `;
+                }
+                container.innerHTML = html;
+            } catch (error) {
+                container.innerHTML = `<div class="alert alert-error">加载失败: ${error.message}</div>`;
+            }
+        }
+
+        async function expandGradingArea(assignmentId) {
+            const area = document.getElementById(`grading-area-${assignmentId}`);
+            if (area.style.display === 'block') {
+                area.style.display = 'none';
+                return;
+            }
+
+            area.style.display = 'block';
+            area.innerHTML = '加载提交记录...';
+
+            try {
+                const submissions = await api.getAssignmentSubmissions(assignmentId);
+                if (submissions.length === 0) {
+                    area.innerHTML = '<p class="text-center text-muted">暂无提交记录</p>';
+                    return;
+                }
+
+                // Get student info for submissions
+                // In a real app, we should batch fetch students, but here we loop
+                const listHtmlPromises = submissions.map(async sub => {
+                    let studentName = `学生 #${sub.student_id}`;
+                    try {
+                        const student = await api.getStudent(sub.student_id);
+                        // User info is inside student object's user relation usually, but API returns student info
+                        // Let's assume we can get user info. Actually getStudent returns student profile.
+                        // Maybe we need another call to get user details?
+                        // The student endpoint returns user_id. We might need /users/{id} or similar.
+                        // For simplicity, let's just show ID if name fetch is hard, or generic name.
+                        // Actually, getStudents returns list with user_id.
+                        // Let's just use student_number if available from getStudent result
+                        studentName = student.student_number || `S${sub.student_id}`;
+                    } catch (e) { }
+
+                    const isGraded = sub.score !== null && sub.score !== undefined;
+
+                    return `
+                        <div class="flex justify-between items-center p-2 mb-1" style="background: rgba(255,255,255,0.05); border-radius: 4px;">
+                            <div>
+                                <div><strong>${studentName}</strong></div>
+                                <div class="text-sm text-muted">提交时间: ${new Date(sub.submitted_at).toLocaleString()}</div>
+                                ${sub.file_path ? `
+                                    <button class="btn btn-sm btn-info mt-1" onclick="downloadSubmissionFile(${sub.id}, '${sub.file_path.split('/').pop()}')">
+                                        📥 下载附件
+                                    </button>
+                                ` : ''}
+                            </div>
+                            <div class="text-right">
+                                ${isGraded
+                            ? `<div><span class="badge badge-success">${sub.score}分</span></div>`
+                            : `<button class="btn btn-primary btn-sm" onclick="openGradingModal(${sub.id}, ${sub.score || 0}, '${sub.content || ''}')">评分</button>`
+                        }
+                            </div>
+                        </div>
+                     `;
+                });
+
+                const listHtml = await Promise.all(listHtmlPromises);
+                area.innerHTML = listHtml.join('');
+
+            } catch (error) {
+                area.innerHTML = '加载失败';
+            }
+        }
+
+        // Grading Actions
+        let currentSubmissionId = null;
+
+        function openGradingModal(subId, currentScore, content) {
+            currentSubmissionId = subId;
+            document.getElementById('submissionId').value = subId;
+            document.getElementById('gradeScore').value = currentScore || '';
+            document.getElementById('gradeFeedback').value = '';
+            document.getElementById('submissionContent').innerHTML = `<p><strong>作业内容:</strong></p><p>${content || '无文本内容'}</p>`;
+            document.getElementById('gradingModal').style.display = 'flex';
+        }
+
+        function closeGradingModal() {
+            document.getElementById('gradingModal').style.display = 'none';
+        }
+
+        async function submitGrade(event) {
+            event.preventDefault();
+            const score = parseFloat(document.getElementById('gradeScore').value);
+            const feedback = document.getElementById('gradeFeedback').value;
+
+            try {
+                await api.gradeSubmission(currentSubmissionId, score, feedback);
+                showAlert('评分成功', 'success');
+                closeGradingModal();
+                // Refresh
+                const courseId = document.getElementById('courseSelect').value;
+                if (courseId) loadCourseAssignments(courseId);
+                loadStats(); // Update pending count
+            } catch (error) {
+                showAlert('评分失败: ' + error.message, 'error');
+            }
+        }
+
+        // Assignment Creation
+        function showCreateAssignmentModal(courseId) {
+            document.getElementById('assignmentCourseId').value = courseId;
+            document.getElementById('assignmentModal').style.display = 'flex';
+        }
+
+        async function handleCreateAssignment(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = {
+                course_id: parseInt(document.getElementById('assignmentCourseId').value),
+                title: formData.get('title'),
+                description: formData.get('description'),
+                due_date: formData.get('dueDate'),
+                total_points: parseInt(formData.get('totalPoints'))
+            };
+
+            try {
+                await api.createAssignment(data);
+                showAlert('发布成功', 'success');
+                document.getElementById('assignmentModal').style.display = 'none';
+                loadStats();
+                loadCourses();
+            } catch (error) {
+                showAlert('发布失败: ' + error.message, 'error');
+            }
+        }
+
+        // File Download
+        async function downloadSubmissionFile(submissionId, filename) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/assignments/submissions/${submissionId}/download`, {
+                    headers: {
+                        'Authorization': `Bearer ${api.token}`
+                    }
+                });
+
+                if (!response.ok) throw new Error('Download failed');
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename || 'submission_file';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            } catch (error) {
+                showAlert('下载失败: ' + error.message, 'error');
+            }
+        }
+
+        // Helpers
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+            // Find tab button (simplest way: match text or use strict id logic)
+            // Here we just find buttons with specific onclick
+            const buttons = document.querySelectorAll('.tab');
+            for (let b of buttons) {
+                if (b.getAttribute('onclick').includes(tabName)) {
+                    b.classList.add('active');
+                }
+            }
+
+            document.getElementById(tabName + 'Tab').classList.add('active');
+        }
+
+        function showAlert(msg, type) {
+            // Reuse implementation from student dashboard or simple alert
+            const div = document.createElement('div');
+            div.className = `alert alert-${type} fade-in`;
+            div.textContent = msg;
+            div.style.position = 'fixed';
+            div.style.top = '20px';
+            div.style.right = '20px';
+            div.style.zIndex = '9999';
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 3000);
+        }
+
+        function logout() {
+            api.logout();
+            window.location.href = 'login.html';
+        }
+
+        // Run
+        init();
+
+        // Expose function for onclick
+        window.viewPendingGrades = function () {
+            switchTab('grading');
+            showAlert('请选择课程以开始批改', 'info');
+        };
+    </script>
+</body>
+
+</html>
