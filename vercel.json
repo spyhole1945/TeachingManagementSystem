@@ -12,7 +12,7 @@
     ],
     "routes": [
         {
-            "src": "/(auth|courses|students|teachers|enrollments|grades|assignments|materials|notifications|admin|docs|redoc|openapi.json)(.*)",
+            "src": "/(auth|courses|students|teachers|enrollments|grades|assignments|materials|notifications|admin|docs|redoc|openapi.json)(/.*|$)",
             "dest": "tms/api/main.py"
         },
         {
