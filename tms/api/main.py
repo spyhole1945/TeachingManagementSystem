@@ -68,6 +68,11 @@ async def startup_event():
     # Initialize database
     from tms.infra.database import init_db
     init_db()
+    
+    # Seed initial data (admin user)
+    from tms.seed_initial_data import seed_initial_data
+    seed_initial_data()
+    
     print("📦 Database initialized")
     
     print(f"📚 API documentation available at /docs")
