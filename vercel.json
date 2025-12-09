@@ -4,6 +4,10 @@
         {
             "src": "tms/api/main.py",
             "use": "@vercel/python"
+        },
+        {
+            "src": "frontend/**",
+            "use": "@vercel/static"
         }
     ],
     "routes": [
