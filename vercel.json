@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "tms/api/main.py",
+            "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(auth|courses|students|teachers|enrollments|grades|assignments|materials|notifications|admin|docs|redoc|openapi.json)(.*)",
+            "dest": "tms/api/main.py"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/frontend/$1"
+        }
+    ]
+}
