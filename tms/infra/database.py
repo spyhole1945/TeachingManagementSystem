@@ -32,11 +32,19 @@ def get_db() -> Generator[Session, None, None]:
     Dependency function to get database session
     Yields a database session and ensures it's closed after use
     """
-    db = SessionLocal()
+    db = None
     try:
+        db = SessionLocal()
         yield db
+    except Exception as e:
+        print(f"❌ Database session error: {e}")
+        # Check if we are accidentally using SQLite on Vercel
+        if "sqlite" in config.DATABASE_URL and config.UPLOAD_DIR.startswith("/tmp"):
+             print("⚠️ CRITICAL: Using SQLite on Vercel (Read-only filesystem). DATABASE_URL environment variable is likely missing!")
+        raise e
     finally:
-        db.close()
+        if db:
+            db.close()
 
 def init_db() -> None:
     """
