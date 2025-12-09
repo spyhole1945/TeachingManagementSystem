@@ -21,7 +21,8 @@ class Config:
     PASSWORD_SALT_ROUNDS: int = 12
     
     # File Upload
-    UPLOAD_DIR: str = os.getenv("UPLOAD_DIR", "./uploads")
+    # On Vercel (Read-only FS), use /tmp. Otherwise use local ./uploads
+    UPLOAD_DIR: str = os.getenv("UPLOAD_DIR", "/tmp/uploads" if os.getenv("VERCEL") else "./uploads")
     MAX_UPLOAD_SIZE: int = 10 * 1024 * 1024  # 10MB
     
     # Session

@@ -65,16 +65,31 @@ async def startup_event():
     """Run on application startup"""
     print(f"🚀 {config.APP_NAME} v{config.APP_VERSION} starting...")
     
-    # Initialize database
-    from tms.infra.database import init_db
-    init_db()
+    try:
+        # Initialize database
+        from tms.infra.database import init_db
+        init_db()
+        print("📦 Database initialized")
+    except Exception as e:
+        print(f"❌ Database initialization failed: {e}")
+
+    try:
+        # Seed initial data (admin user)
+        from tms.seed_initial_data import seed_initial_data
+        seed_initial_data()
+        print("🌱 Initial data seeded")
+    except Exception as e:
+        print(f"❌ Initial data seeding failed: {e}")
     
-    # Seed initial data (admin user)
-    from tms.seed_initial_data import seed_initial_data
-    seed_initial_data()
-    
-    print("📦 Database initialized")
-    
+    # Ensure upload directory exists
+    import os
+    if not os.path.exists(config.UPLOAD_DIR):
+        try:
+            os.makedirs(config.UPLOAD_DIR, exist_ok=True)
+            print(f"jj Created upload directory: {config.UPLOAD_DIR}")
+        except Exception as e:
+            print(f"❌ Failed to create upload directory {config.UPLOAD_DIR}: {e}")
+            
     print(f"📚 API documentation available at /docs")
 
 
